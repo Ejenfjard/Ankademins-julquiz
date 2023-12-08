@@ -12,7 +12,26 @@
 </head>
 
 <body>
-    <h1>Ankademins julquiz</h1>
+    <div id="startPage" style="display: none;">
+        <h1>Ankademins julquiz</h1>
+        <button id="startQuiz">Starta quiz</button>
+    </div>
+
+    <div id="quiz-container">
+        <div id="question">fråga</div>
+        <p id="feedback">feedback</p>
+
+        <div id="options"></div>
+
+        <div id="btnBox">
+            <button id="nextQuestion">Nästa fråga</button>
+            <button id="submit" style="display: none;">Se resultat</button>
+        </div>
+    </div>
+    <div id="Result" style="display: none;">
+        <p>Resultat:</p>
+    </div>
+
 </body>
 
 </html>
