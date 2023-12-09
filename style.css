@@ -5,7 +5,26 @@ body {
   align-items: center;
   justify-content: center;
 }
-body h1 {
+body #startPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+  height: 70%;
+  background: lightgray;
+  border: none;
+  border-radius: 1rem;
+}
+body #startPage #startQuiz {
+  width: 15rem;
+  height: 8rem;
+  background: black;
+  color: snow;
+  border: none;
+  border-radius: 1rem;
+}
+body #startPage h1 {
   color: black;
 }
 body #quiz-container {

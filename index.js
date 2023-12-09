@@ -101,6 +101,24 @@ let questionArray = [
 let questionDiv = document.getElementById("question");
 let optionsDiv = document.getElementById("options");
 let nextQuestionBtn = document.getElementById("nextQuestion");
+let startQuizBtn = document.getElementById("startQuiz");
+
+let currentQuestion = 0
+
+
+function startQuiz() {
+    startQuizBtn.addEventListener("click", (event) => {
+        document.getElementById("quiz-container").style.display = "block";
+        document.getElementById("startPage").style.display = "none";
+
+    })
+
+
+
+
+}
+
+startQuiz();
 
 
 
