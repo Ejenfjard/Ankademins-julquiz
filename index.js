@@ -125,30 +125,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function showQuestion() {
         let questionDiv = document.getElementById("question");
-        let optionsDiv = document.getElementById("options");
-        //Deklarera och definera feedback samt nollställ efter varje fråga 
+        let optionDiv = document.getElementById("options");
 
+        //Deklarera och definera feedback samt nollställ efter varje fråga 
         feedbackString.innerHTML = "";
 
         // Visa aktuell fråga från arrayen 
         questionDiv.innerHTML = questionArray[currentQuestion].question;
 
-        // Ta bort tidigare alternativ
-        optionsDiv.innerHTML = "";
+        let btnOption;
 
-        //Skapar ett element där svarsalterativen visas
-        let btnDiv = document.createElement("div");
-        btnDiv.id = "btnOptionContainer";
-
+        // foreach för att skapa buttons för varje alternativ samt selectoption för att 
+        // lagra logik som körs då man tryckt på ett alternativ. 
         questionArray[currentQuestion].options.forEach((option, index) => {
-            let btnOption = document.createElement("button");
+            btnOption = document.createElement("button");
             btnOption.textContent = option;
-            btnOption.classList.add("option");
+            btnOption.classList.add("btnOption");
             btnOption.addEventListener("click", () => selectOption(index));
-            btnDiv.appendChild(btnOption);
+            optionDiv.appendChild(btnOption);
         });
 
-        optionsDiv.appendChild(btnDiv);
+
 
     }
 
