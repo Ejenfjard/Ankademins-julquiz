@@ -103,18 +103,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let nextQuestionBtn = document.getElementById("nextQuestion");
     let startQuizBtn = document.getElementById("startQuiz");
     let currentQuestion = 0
+    let userScore = 0;
 
     startQuizBtn.addEventListener("click", startQuiz);
-    nextQuestionBtn.addEventListener("click", () => {
-        //logik för att gå vidare till nästa fråga 
 
-        //Göra till en function (nextQuestionSetUp)
-
-
-        currentQuestion++;
-
-        showQuestion();
-    });
 
     function startQuiz() {
         // Tar bort startPage och ersätter det med Quizet samt kör funktionen 
@@ -161,35 +153,42 @@ document.addEventListener("DOMContentLoaded", function () {
         if (selectedIndex === correctAnswerIndex) {
 
             feedbackString.innerHTML = "Rätt svar!";
+            userScore++;
+
         } else {
             feedbackString.innerHTML = "Fel svar!";
         }
     }
 
+    nextQuestionBtn.addEventListener("click", () => {
+        //logik för att gå vidare till nästa fråga 
+        currentQuestion++;
+
+        if (currentQuestion < questionArray.length) {
+            showQuestion();  // Om alla frågor inte besvarats så körs funk. showquestion och användaren klickas vidare till nästa obesvarade fråga 
+            feedbackString.innerHTML = ""; //Föregående fråga feedback raderas. 
+        }
+
+        else {
+            showResult(); // Kör funk. om alla frågor besvarats. 
+        }
+
+    });
+
+
+
+
 });
 
 
 
-// (nextQuestionSetUp)
-
-
-// logik för att visa resultat om man svarat på sista frågan (ShowResult)
 
 
 
 
 
 
-
-
-// Lägga till en function (showResult) som visar resultatet och räkna poängen
-
-
-
-
-
-
-
+// Lägga till funktion som skapar möjligheten för användaren att toggla mellan dark och light mode
 
 
 
