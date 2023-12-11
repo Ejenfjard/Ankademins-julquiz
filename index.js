@@ -102,6 +102,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let nextQuestionBtn = document.getElementById("nextQuestion");
     let startQuizBtn = document.getElementById("startQuiz");
+    let submitBtn = document.getElementById("submit");
+    let resultDiv = document.getElementById("result");
+    let quizDiv = document.getElementById("quiz-container");
+    let startPage = document.getElementById("startPage");
+    let feedbackString = document.getElementById("feedback");
     let currentQuestion = 0
     let userScore = 0;
 
@@ -111,8 +116,9 @@ document.addEventListener("DOMContentLoaded", function () {
     function startQuiz() {
         // Tar bort startPage och ersätter det med Quizet samt kör funktionen 
         // showQuestion
-        document.getElementById("quiz-container").style.display = "block";
-        document.getElementById("startPage").style.display = "none";
+        quizDiv.style.display = "block";
+        startPage.style.display = "none";
+
         showQuestion();
     }
 
@@ -121,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let questionDiv = document.getElementById("question");
         let optionsDiv = document.getElementById("options");
         //Deklarera och definera feedback samt nollställ efter varje fråga 
-        let feedbackString = document.getElementById("feedback");
+
         feedbackString.innerHTML = "";
 
         // Visa aktuell fråga från arrayen 
@@ -148,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function selectOption(selectedIndex) {
         let correctAnswerIndex = questionArray[currentQuestion].correctAnswer;
-        let feedbackString = document.getElementById("feedback");
+
 
         if (selectedIndex === correctAnswerIndex) {
 
@@ -170,15 +176,26 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         else {
-            showResult(); // Kör funk. om alla frågor besvarats. 
+            submitBtn.style.display = "block";
+            nextQuestionBtn.style.display = "none";
         }
 
     });
 
+    submitBtn.addEventListener("click", () => {
+        //Logik som körs då användaren trycker på "Se resultat"
+        resultDiv.style.display = "block";
+        quizDiv.style.display = "none";
 
 
+        // Lägga till en if else sats som tar in logiken där quizet ger tillbaka information om 
+        // hur många rätt användaren fått och färg på text ska visas utifrån vilken poäng användaren fått. 
 
-});
+    });
+
+})
+
+
 
 
 
