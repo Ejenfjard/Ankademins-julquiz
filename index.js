@@ -130,6 +130,9 @@ document.addEventListener("DOMContentLoaded", function () {
         //Deklarera och definera feedback samt nollställ efter varje fråga 
         feedbackString.innerHTML = "";
 
+        // Nollställ alt. från tidigare fråga. 
+        optionDiv.innerHTML = "";
+
         // Visa aktuell fråga från arrayen 
         questionDiv.innerHTML = questionArray[currentQuestion].question;
 
@@ -148,6 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     }
+
 
     function selectOption(selectedIndex) {
         let correctAnswerIndex = questionArray[currentQuestion].correctAnswer;
@@ -168,36 +172,60 @@ document.addEventListener("DOMContentLoaded", function () {
         currentQuestion++;
 
         if (currentQuestion < questionArray.length) {
+
+            selectOption(); // Då användaren klickar på nästa fråga kollar datan om svaret är rätt och räknar poäng. 
+
             showQuestion();  // Om alla frågor inte besvarats så körs funk. showquestion och användaren klickas vidare till nästa obesvarade fråga 
             feedbackString.innerHTML = ""; //Föregående fråga feedback raderas. 
         }
 
         else {
+            // Logik som tar bort knappen nästa fråga och lägger till knappen se resultat 
             submitBtn.style.display = "block";
             nextQuestionBtn.style.display = "none";
         }
 
     });
 
-    submitBtn.addEventListener("click", () => {
+    submitBtn.addEventListener("click", showResult);
+
+    function showResult() {
         //Logik som körs då användaren trycker på "Se resultat"
         resultDiv.style.display = "block";
         quizDiv.style.display = "none";
 
+        function calculateStarRating(userScore) {
 
-        // Lägga till en if else sats som tar in logiken där quizet ger tillbaka information om 
-        // hur många rätt användaren fått och färg på text ska visas utifrån vilken poäng användaren fått. 
+            let maxPoints = questionArray.length;
+            let points = (userScore / maxPoints) * 100;
 
-    });
+            let resultText = document.querySelector("h2");
+            let resultColor = document.getElementById("resultTextColor");
 
-})
+            if (points > 75) {
+                document.querySelector(".very-good").style.display = "block";
+                resultText.innerHTML = `Riktigt bra jobbat! Ditt resultat: ${userScore} av ${questionArray.length}`;
+                resultColor.style.backgroundColor = "green";
+            } else if (points >= 50 && points <= 75) {
+                document.querySelector(".good").style.display = "block";
+                resultText.innerHTML = `Bra jobbat! Ditt resultat: ${userScore} av ${questionArray.length}`;
+                resultColor.style.backgroundColor = "orange";
+            } else {
+                document.querySelector(".not-approved").style.display = "block";
+                resultText.innerHTML = `Underkänd Ditt resultat: ${userScore} av ${questionArray.length}`;
+                resultColor.style.backgroundColor = "Red";
+            }
+
+        }
+
+        calculateStarRating(userScore);
 
 
 
 
+    }
 
-
-
+});
 
 
 
