@@ -187,6 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
+    // När man trycker på knappen "Se resultat" så körs functionen showResult
     submitBtn.addEventListener("click", showResult);
 
     function showResult() {
@@ -194,34 +195,47 @@ document.addEventListener("DOMContentLoaded", function () {
         resultDiv.style.display = "block";
         quizDiv.style.display = "none";
 
+        // Function med variabeln userScore för att samla in data om hur många rätt användaren fått.
+        // och för att köra logik för att räkna och visa "rating" på användarens prestation i quizet. 
         function calculateStarRating(userScore) {
 
+
+            // Variabeln definerar antal maxpoäng beroende på antal frågor i Arrayen. 
             let maxPoints = questionArray.length;
+
+            // Skapat en variabel för att spara logik för hur data får fram procentuellt värde
+            //  av antal userScore som användaren samlat under quizet. 
             let points = (userScore / maxPoints) * 100;
 
+
+            // Skapat en variabel där texten skrivs ut beroende på vilket villkor som uppfylls i if else-satsen
             let resultText = document.querySelector("h2");
+
+            // Skapat en variabel för att kunna ändra bakgrundsfärgen på resultatet beroende på vilken poäng användaren fått
             let resultColor = document.getElementById("resultTextColor");
 
+            //Om användaren fått mer än 8/10 rätt. 
             if (points > 75) {
                 document.querySelector(".very-good").style.display = "block";
                 resultText.innerHTML = `Riktigt bra jobbat! Ditt resultat: ${userScore} av ${questionArray.length}`;
                 resultColor.style.backgroundColor = "green";
-            } else if (points >= 50 && points <= 75) {
+            }
+            // Om användaren fått 5/10 - 7/10 rätt.  
+            else if (points >= 50 && points <= 75) {
                 document.querySelector(".good").style.display = "block";
                 resultText.innerHTML = `Bra jobbat! Ditt resultat: ${userScore} av ${questionArray.length}`;
                 resultColor.style.backgroundColor = "orange";
-            } else {
+            }
+            // Om användaren fått mindre än 5/10 rätt
+            else {
                 document.querySelector(".not-approved").style.display = "block";
                 resultText.innerHTML = `Underkänd Ditt resultat: ${userScore} av ${questionArray.length}`;
                 resultColor.style.backgroundColor = "Red";
             }
 
         }
-
+        // Anropar functionen 
         calculateStarRating(userScore);
-
-
-
 
     }
 
