@@ -28,6 +28,8 @@ body {
 }
 body #toggleBtn {
   border-radius: 1rem;
+  border: none;
+  opacity: 0.7;
   background: var(--bg-buttonToggle);
   top: 50px;
   left: 50px;
@@ -35,7 +37,7 @@ body #toggleBtn {
   z-index: 1;
 }
 body #toggleBtn #toggleIcon {
-  font-size: 4em;
+  font-size: 3em;
   cursor: pointer;
 }
 body .wrapper {
@@ -55,8 +57,8 @@ body .wrapper #startPage {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  width: 50%;
-  height: 70%;
+  width: 70%;
+  height: 75%;
   background: var(--bg-colorContainer);
   border: none;
   border-radius: 1rem;
@@ -81,8 +83,8 @@ body .wrapper #quiz-container {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 50%;
-  height: 70%;
+  width: 70%;
+  height: 75%;
   background: var(--bg-colorContainer);
   border: none;
   border-radius: 1rem;
@@ -141,8 +143,8 @@ body .wrapper #quiz-container #btnBox #submit {
   margin: 10px;
 }
 body .wrapper #result {
-  width: 50%;
-  height: 70%;
+  width: 70%;
+  height: 75%;
   background: var(--bg-colorContainer);
   border: none;
   border-radius: 1rem;
@@ -157,31 +159,16 @@ body .wrapper #result .box_result {
   justify-content: center;
   align-items: center;
 }
-body .wrapper #result .box_result .not-approved .star {
+body .wrapper #result .box_result .star {
   display: flex;
   justify-content: center;
   gap: 2rem;
 }
-body .wrapper #result .box_result .not-approved #star_black {
+body .wrapper #result .box_result .star_black {
   flex-direction: row;
   width: 10%;
 }
-body .wrapper #result .box_result .good .star {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-body .wrapper #result .box_result .good #star_black {
-  width: 10%;
-}
-body .wrapper #result .box_result .good #star_yellow {
-  width: 10%;
-}
-body .wrapper #result .box_result .very-good .star {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-body .wrapper #result .box_result .very-good .star #star_yellow {
+body .wrapper #result .box_result .star_yellow {
+  flex-direction: row;
   width: 10%;
 }/*# sourceMappingURL=style.css.map */

@@ -107,7 +107,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let quizDiv = document.getElementById("quiz-container");
     let startPage = document.getElementById("startPage");
     let feedbackString = document.getElementById("feedback");
-    let darkLightIcon = document.getElementById("dark-light-icon");
     let currentQuestion = 0
     let userScore = 0;
 

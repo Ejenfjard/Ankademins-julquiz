@@ -33,8 +33,11 @@ body {
 
 
 
+
     #toggleBtn {
         border-radius: 1rem;
+        border: none;
+        opacity: 0.7;
         background: var(--bg-buttonToggle);
         top: 50px;
         left: 50px;
@@ -43,7 +46,7 @@ body {
 
 
         #toggleIcon {
-            font-size: 4em;
+            font-size: 3em;
             cursor: pointer;
 
 
@@ -80,8 +83,8 @@ body {
             flex-direction: column;
             align-items: center;
             justify-content: space-around;
-            width: 50%;
-            height: 70%;
+            width: 70%;
+            height: 75%;
             background: var(--bg-colorContainer);
             border: none;
             border-radius: 1rem;
@@ -114,8 +117,8 @@ body {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 50%;
-            height: 70%;
+            width: 70%;
+            height: 75%;
             background: var(--bg-colorContainer);
             border: none;
             border-radius: 1rem;
@@ -194,8 +197,8 @@ body {
         }
 
         #result {
-            width: 50%;
-            height: 70%;
+            width: 70%;
+            height: 75%;
             background: var(--bg-colorContainer);
             border: none;
             border-radius: 1rem;
@@ -212,58 +215,26 @@ body {
                 align-items: center;
 
 
-                .not-approved {
-
-
-                    .star {
-                        display: flex;
-                        justify-content: center;
-                        gap: 2rem;
-                    }
-
-                    #star_black {
-                        flex-direction: row;
-                        width: 10%;
-
-
-                    }
+                .star {
+                    display: flex;
+                    justify-content: center;
+                    gap: 2rem;
                 }
 
-                .good {
-                    .star {
-                        display: flex;
-                        justify-content: center;
-                        gap: 2rem;
-                    }
+                .star_black {
+                    flex-direction: row;
+                    width: 10%;
 
-                    #star_black {
-                        width: 10%;
-
-
-                    }
-
-                    #star_yellow {
-                        width: 10%;
-                    }
                 }
 
-                .very-good {
-
-                    .star {
-                        display: flex;
-                        justify-content: center;
-                        gap: 2rem;
-
-
-                        #star_yellow {
-                            width: 10%;
-                        }
-
-
-                    }
+                .star_yellow {
+                    flex-direction: row;
+                    width: 10%;
 
                 }
             }
+
         }
+
     }
 }
