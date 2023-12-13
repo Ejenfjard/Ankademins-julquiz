@@ -6,57 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/bd92cc43eb.js" crossorigin="anonymous"></script>
     <script src="index.js" defer></script>
+
+
+
 
 
 </head>
 
 <body>
-    <div id="startPage">
-        <h1>Ankademins julquiz</h1>
-        <button id="startQuiz">Starta quiz</button>
-    </div>
 
-    <div id="quiz-container" style="display: none;">
-        <div id="question">fråga</div>
-        <p id="feedback"></p>
+    <button id="toggleBtn">
+        <i class="fa-solid fa-circle-half-stroke" id="toggleIcon"></i>
+    </button>
 
-        <div id="options">
-
+    <div class="wrapper">
+        <div id="startPage">
+            <h1>Ankademins julquiz</h1>
+            <button id="startQuizBtn">Starta quiz</button>
         </div>
 
-        <div id="btnBox">
-            <button id="nextQuestion">Nästa fråga</button>
-            <button id="submit" style="display: none;">Se resultat</button>
+        <div id="quiz-container" style="display: none;">
+            <div id="question">fråga</div>
+            <p id="feedback"></p>
+
+            <div id="options">
+
+            </div>
+
+            <div id="btnBox">
+                <button id="nextQuestion">Nästa fråga</button>
+                <button id="submit" style="display: none;">RESULTAT</button>
+            </div>
         </div>
-    </div>
-    <div id="result" style="display: none;">
-        <h2 id="resultTextColor"></h2>
-        <div class="box_result">
-            <div class="not-approved" style="display: none;">
 
-                <div class="star">
-                    <img src="img/star_empty.png" alt="star" id="star_black">
-                    <img src="img/star_empty.png" alt="star" id="star_black">
-                    <img src="img/star_empty.png" alt="star" id="star_black">
+        <div id="result" style="display: none;">
+            <h2 id="resultTextColor"></h2>
+            <div class="box_result">
+                <div class="not-approved" style="display: none;">
+
+                    <div class="star">
+                        <img src="img/star_empty.png" alt="star" id="star_black">
+                        <img src="img/star_empty.png" alt="star" id="star_black">
+                        <img src="img/star_empty.png" alt="star" id="star_black">
+                    </div>
                 </div>
-            </div>
 
-            <div class="good" style="display: none;">
+                <div class="good" style="display: none;">
 
-                <div class="star">
-                    <img src="img/star_yellow.png" alt="yellowstar" id="star_yellow">
-                    <img src="img/star_empty.png" alt="star" id="star_black">
-                    <img src="img/star_empty.png" alt="star" id="star_black">
+                    <div class="star">
+                        <img src="img/star_yellow.png" alt="yellowstar" id="star_yellow">
+                        <img src="img/star_yellow.png" alt="star" id="star_yellow">
+                        <img src="img/star_empty.png" alt="star" id="star_black">
+                    </div>
                 </div>
-            </div>
 
-            <div class="very-good" style="display: none;">
+                <div class="very-good" style="display: none;">
 
-                <div class="star">
-                    <img src="img/star_yellow.png" alt="yellowstar" id="star_yellow">
-                    <img src="img/star_yellow.png" alt="yellowstar" id="star_yellow">
-                    <img src="img/star_yellow.png" alt="yellowstar" id="star_yellow">
+                    <div class="star">
+                        <img src="img/star_yellow.png" alt="yellowstar" id="star_yellow">
+                        <img src="img/star_yellow.png" alt="yellowstar" id="star_yellow">
+                        <img src="img/star_yellow.png" alt="yellowstar" id="star_yellow">
+                    </div>
                 </div>
             </div>
         </div>

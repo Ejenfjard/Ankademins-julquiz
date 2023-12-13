@@ -1,115 +1,187 @@
+/* dark/light mode */
+:root {
+  --text-color: #fff;
+  --bg-colorContainer: #003300;
+  --bg-colorWrapper: #990000;
+  --buttonBg: #086100;
+  --bg-buttonToggle: #fff;
+}
+
+.light {
+  --text-color: #990000;
+  --buttonBg: #ccffcc;
+  --bg-colorContainer: #e99595;
+  --bg-colorWrapper: #ccffcc;
+  --bg-buttonToggle: #666666;
+}
+
 body {
   height: 800px;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: url(img/background_santa.jpg);
+  background-size: cover;
+  background-position: center;
 }
-body #startPage {
+body #toggleBtn {
+  border-radius: 1rem;
+  background: var(--bg-buttonToggle);
+  top: 50px;
+  left: 50px;
+  position: absolute;
+  z-index: 1;
+}
+body #toggleBtn #toggleIcon {
+  font-size: 4em;
+  cursor: pointer;
+}
+body .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 900px;
+  height: 700px;
+  border-radius: 1rem;
+  border: dotted 5px var(--text-color);
+  background: var(--bg-colorWrapper);
+  box-sizing: border-box;
+}
+body .wrapper #startPage {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   width: 50%;
   height: 70%;
-  background: lightgray;
+  background: var(--bg-colorContainer);
   border: none;
   border-radius: 1rem;
 }
-body #startPage #startQuiz {
+body .wrapper #startPage #startQuizBtn {
   width: 15rem;
   height: 8rem;
-  background: black;
-  color: snow;
+  background: var(--buttonBg);
+  color: var(--text-color);
   border: none;
   border-radius: 1rem;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
 }
-body #startPage h1 {
-  color: black;
+body .wrapper #startPage h1 {
+  color: var(--text-color);
+  font-weight: 700;
 }
-body #quiz-container {
+body .wrapper #quiz-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 50%;
   height: 70%;
-  background: lightgray;
+  background: var(--bg-colorContainer);
   border: none;
   border-radius: 1rem;
+  box-sizing: border-box;
   gap: 10px;
 }
-body #quiz-container #question {
+body .wrapper #quiz-container #options {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+body .wrapper #quiz-container #options .btnOption {
+  background: var(--buttonBg);
+  color: var(--text-color);
+  font-weight: 700;
+}
+body .wrapper #quiz-container #question {
+  margin: 4rem;
+  color: var(--text-color);
   font-size: 23px;
   text-align: center;
+  font-weight: 700;
 }
-body #quiz-container #feedback {
+body .wrapper #quiz-container #feedback {
   display: flex;
   justify-content: center;
   margin-bottom: -5px;
   font-size: 23px;
+  color: yellow;
 }
-body #quiz-container button {
+body .wrapper #quiz-container button {
   margin-top: 30px;
   width: 10rem;
   height: 3rem;
   border: none;
   border-radius: 1rem;
+  cursor: pointer;
 }
-body #quiz-container #options .btnOption {
-  background: red;
-}
-body #quiz-container #btnBox {
+body .wrapper #quiz-container #btnBox {
   display: flex;
   flex-direction: row;
-  gap: 10px;
-}
-body #quiz-container #btnBox #submit {
-  background: green;
-}
-body #result {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  margin: 3rem;
+}
+body .wrapper #quiz-container #btnBox #nextQuestion {
+  border: dotted #990000 4px;
+  color: #990000;
+  font-weight: 700;
+  margin: 10px;
+}
+body .wrapper #quiz-container #btnBox #submit {
+  border: dotted snow 4px;
+  color: snow;
+  background: #990000;
+  font-weight: 700;
+  margin: 10px;
+}
+body .wrapper #result {
   width: 50%;
   height: 70%;
-  background: lightgray;
+  background: var(--bg-colorContainer);
   border: none;
   border-radius: 1rem;
-  gap: 10px;
 }
-body #result .box_result {
+body .wrapper #result #resultTextColor {
+  text-align: center;
+  font-size: 2rem;
+  color: snow;
+}
+body .wrapper #result .box_result {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
 }
-body #result .box_result .not-approved .star {
+body .wrapper #result .box_result .not-approved .star {
   display: flex;
   justify-content: center;
   gap: 2rem;
 }
-body #result .box_result .not-approved #star_black {
+body .wrapper #result .box_result .not-approved #star_black {
   flex-direction: row;
   width: 10%;
 }
-body #result .box_result .good .star {
+body .wrapper #result .box_result .good .star {
   display: flex;
   justify-content: center;
   gap: 2rem;
 }
-body #result .box_result .good #star_black {
+body .wrapper #result .box_result .good #star_black {
   width: 10%;
 }
-body #result .box_result .good #star_yellow {
+body .wrapper #result .box_result .good #star_yellow {
   width: 10%;
 }
-body #result .box_result .very-good .star {
+body .wrapper #result .box_result .very-good .star {
   display: flex;
   justify-content: center;
   gap: 2rem;
 }
-body #result .box_result .very-good .star #star_yellow {
+body .wrapper #result .box_result .very-good .star #star_yellow {
   width: 10%;
 }/*# sourceMappingURL=style.css.map */

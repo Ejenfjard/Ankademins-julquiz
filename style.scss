@@ -1,34 +1,50 @@
+/* dark/light mode */
+:root {
+    --text-color: #fff;
+    --bg-colorContainer: #003300;
+    --bg-colorWrapper: #990000;
+    --buttonBg: #086100;
+    --bg-buttonToggle: #fff;
+}
+
+.light {
+    --text-color: #990000;
+    --buttonBg: #ccffcc;
+    --bg-colorContainer: #e99595;
+    --bg-colorWrapper: #ccffcc;
+    --bg-buttonToggle: #666666;
+
+
+}
+
 body {
     height: 800px;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-image: url(img/background_santa.jpg);
+    background-size: cover;
+    background-position: center;
 
 
-    #startPage {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        width: 50%;
-        height: 70%;
-        background: lightgray;
-        border: none;
+
+    #toggleBtn {
         border-radius: 1rem;
-
-        #startQuiz {
-            width: 15rem;
-            height: 8rem;
-            background: black;
-            color: snow;
-            border: none;
-            border-radius: 1rem;
-        }
+        background: var(--bg-buttonToggle);
+        top: 50px;
+        left: 50px;
+        position: absolute;
+        z-index: 1;
 
 
-        h1 {
-            color: black;
+        #toggleIcon {
+            font-size: 4em;
+            cursor: pointer;
+
+
+
         }
 
     }
@@ -36,133 +52,212 @@ body {
 
 
 
-    #quiz-container {
+
+
+
+    .wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 50%;
-        height: 70%;
-        background: lightgray;
-        border: none;
+        width: 900px;
+        height: 700px;
         border-radius: 1rem;
-        gap: 10px;
+        border: dotted 5px var(--text-color);
+        background: var(--bg-colorWrapper);
+        box-sizing: border-box;
 
-        #question {
 
-            font-size: 23px;
-            text-align: center;
-        }
 
-        #feedback {
+
+        #startPage {
             display: flex;
-            justify-content: center;
-            margin-bottom: -5px;
-            font-size: 23px;
-
-
-        }
-
-        button {
-            margin-top: 30px;
-            width: 10rem;
-            height: 3rem;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            width: 50%;
+            height: 70%;
+            background: var(--bg-colorContainer);
             border: none;
             border-radius: 1rem;
-        }
 
-
-
-
-        #options {
-
-
-            .btnOption {
-                background: red;
+            #startQuizBtn {
+                width: 15rem;
+                height: 8rem;
+                background: var(--buttonBg);
+                color: var(--text-color);
+                border: none;
+                border-radius: 1rem;
+                cursor: pointer;
+                font-size: 20px;
+                font-weight: 700;
             }
+
+
+            h1 {
+                color: var(--text-color);
+                font-weight: 700;
+            }
+
         }
 
-        #btnBox {
+
+
+
+        #quiz-container {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+            height: 70%;
+            background: var(--bg-colorContainer);
+            border: none;
+            border-radius: 1rem;
+            box-sizing: border-box;
             gap: 10px;
 
-            #submit {
-                background: green;
+            #options {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+
+
+                .btnOption {
+                    background: var(--buttonBg);
+                    color: var(--text-color);
+                    font-weight: 700;
+                }
+
+            }
+
+            #question {
+                margin: 4rem;
+                color: var(--text-color);
+                font-size: 23px;
+                text-align: center;
+                font-weight: 700;
+            }
+
+            #feedback {
+                display: flex;
+                justify-content: center;
+                margin-bottom: -5px;
+                font-size: 23px;
+                color: yellow;
+
+
+            }
+
+            button {
+                margin-top: 30px;
+                width: 10rem;
+                height: 3rem;
+                border: none;
+                border-radius: 1rem;
+                cursor: pointer;
+            }
+
+
+
+
+
+
+            #btnBox {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin: 3rem;
+
+                #nextQuestion {
+                    border: dotted #990000 4px;
+                    color: #990000;
+                    font-weight: 700;
+                    margin: 10px;
+
+                }
+
+                #submit {
+                    border: dotted snow 4px;
+                    color: snow;
+                    background: #990000;
+                    font-weight: 700;
+                    margin: 10px;
+
+                }
             }
         }
-    }
 
-    #result {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 50%;
-        height: 70%;
-        background: lightgray;
-        border: none;
-        border-radius: 1rem;
-        gap: 10px;
-
-
-        .box_result {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        #result {
             width: 50%;
+            height: 70%;
+            background: var(--bg-colorContainer);
+            border: none;
+            border-radius: 1rem;
 
-
-            .not-approved {
-
-
-                .star {
-                    display: flex;
-                    justify-content: center;
-                    gap: 2rem;
-                }
-
-                #star_black {
-                    flex-direction: row;
-                    width: 10%;
-
-
-                }
+            #resultTextColor {
+                text-align: center;
+                font-size: 2rem;
+                color: snow;
             }
 
-            .good {
-                .star {
-                    display: flex;
-                    justify-content: center;
-                    gap: 2rem;
+            .box_result {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+
+                .not-approved {
+
+
+                    .star {
+                        display: flex;
+                        justify-content: center;
+                        gap: 2rem;
+                    }
+
+                    #star_black {
+                        flex-direction: row;
+                        width: 10%;
+
+
+                    }
                 }
 
-                #star_black {
-                    width: 10%;
+                .good {
+                    .star {
+                        display: flex;
+                        justify-content: center;
+                        gap: 2rem;
+                    }
+
+                    #star_black {
+                        width: 10%;
 
 
-                }
-
-                #star_yellow {
-                    width: 10%;
-                }
-            }
-
-            .very-good {
-
-                .star {
-                    display: flex;
-                    justify-content: center;
-                    gap: 2rem;
-
+                    }
 
                     #star_yellow {
                         width: 10%;
                     }
-
-
                 }
 
+                .very-good {
+
+                    .star {
+                        display: flex;
+                        justify-content: center;
+                        gap: 2rem;
+
+
+                        #star_yellow {
+                            width: 10%;
+                        }
+
+
+                    }
+
+                }
             }
         }
     }

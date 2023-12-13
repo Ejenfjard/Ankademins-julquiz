@@ -21,7 +21,7 @@ let questionArray = [
 
 
     {
-        question: "Traditionen med att ta in en gran och pynta den juligt kommer från Sverige?",
+        question: "Traditionen med att ta in en gran och pynta granen juligt kommer från Sverige?",
         options: [
             "Sant",
             "Falskt"
@@ -60,7 +60,7 @@ let questionArray = [
     },
 
     {
-        question: "Jultomten brukade ha grön klädsel innan den populära Coca-Cola-annonsen på 1930-talet introducerade honom i rött.",
+        question: "Jultomten brukade ha grön klädsel innan den populära Coca-Cola-annonsen på 1930-talet introducerade tomten i rött.",
         options: [
             "Sant",
             "Falskt"
@@ -79,7 +79,7 @@ let questionArray = [
 
 
     {
-        question: "Comet,Fenix, och Rudolf är tre av Tomtens alla renar",
+        question: "Comet, Fenix och Rudolf är tre av Tomtens alla renar",
         options: [
             "Sant",
             "Falskt"
@@ -101,14 +101,19 @@ let questionArray = [
 document.addEventListener("DOMContentLoaded", function () {
 
     let nextQuestionBtn = document.getElementById("nextQuestion");
-    let startQuizBtn = document.getElementById("startQuiz");
+    let startQuizBtn = document.getElementById("startQuizBtn");
     let submitBtn = document.getElementById("submit");
     let resultDiv = document.getElementById("result");
     let quizDiv = document.getElementById("quiz-container");
     let startPage = document.getElementById("startPage");
     let feedbackString = document.getElementById("feedback");
+    let darkLightIcon = document.getElementById("dark-light-icon");
     let currentQuestion = 0
     let userScore = 0;
+
+
+
+
 
     startQuizBtn.addEventListener("click", startQuiz);
 
@@ -187,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-    // När man trycker på knappen "Se resultat" så körs functionen showResult
+    // När man trycker på knappen "Se resultat" så körs funktionen showResult
     submitBtn.addEventListener("click", showResult);
 
     function showResult() {
@@ -195,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
         resultDiv.style.display = "block";
         quizDiv.style.display = "none";
 
-        // Function med variabeln userScore för att samla in data om hur många rätt användaren fått.
+        // Funktion med variabeln userScore för att samla in data om hur många rätt användaren fått.
         // och för att köra logik för att räkna och visa "rating" på användarens prestation i quizet. 
         function calculateStarRating(userScore) {
 
@@ -217,28 +222,37 @@ document.addEventListener("DOMContentLoaded", function () {
             //Om användaren fått mer än 8/10 rätt. 
             if (points > 75) {
                 document.querySelector(".very-good").style.display = "block";
-                resultText.innerHTML = `Riktigt bra jobbat! Ditt resultat: ${userScore} av ${questionArray.length}`;
+                resultText.innerHTML = `Riktigt bra jobbat! <br> Ditt resultat: ${userScore} av ${questionArray.length}`;
                 resultColor.style.backgroundColor = "green";
             }
             // Om användaren fått 5/10 - 7/10 rätt.  
             else if (points >= 50 && points <= 75) {
                 document.querySelector(".good").style.display = "block";
-                resultText.innerHTML = `Bra jobbat! Ditt resultat: ${userScore} av ${questionArray.length}`;
+                resultText.innerHTML = `Bra jobbat! <br> Ditt resultat: ${userScore} av ${questionArray.length}`;
                 resultColor.style.backgroundColor = "orange";
             }
             // Om användaren fått mindre än 5/10 rätt
             else {
                 document.querySelector(".not-approved").style.display = "block";
-                resultText.innerHTML = `Underkänd Ditt resultat: ${userScore} av ${questionArray.length}`;
+                resultText.innerHTML = `Underkänd! <br> Ditt resultat: ${userScore} av ${questionArray.length}`;
                 resultColor.style.backgroundColor = "Red";
             }
 
         }
-        // Anropar functionen 
+        // Anropar funktionen 
         calculateStarRating(userScore);
 
     }
 
+    //Funktion som kan ändra sidan till dark/light mode 
+    function switchTheme() {
+        let toggleBtn = document.getElementById("toggleBtn");
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("light");
+        });
+    }
+
+    switchTheme();
 });
 
 
