@@ -2,17 +2,19 @@
 :root {
     --text-color: #fff;
     --bg-colorContainer: #003300;
-    --bg-colorWrapper: #990000;
+    --bg-colorWrapper: rgba(129, 9, 9, 0.9);
     --buttonBg: #086100;
     --bg-buttonToggle: #fff;
+
 }
 
 .light {
-    --text-color: #990000;
-    --buttonBg: #ccffcc;
-    --bg-colorContainer: #e99595;
-    --bg-colorWrapper: #ccffcc;
+    --text-color: #660303;
+    --buttonBg: #46a546;
+    --bg-colorContainer: #df4343;
+    --bg-colorWrapper: rgba(125, 227, 112, 0.9);
     --bg-buttonToggle: #666666;
+
 
 
 }
@@ -27,6 +29,7 @@ body {
     background-image: url(img/background_santa.jpg);
     background-size: cover;
     background-position: center;
+
 
 
 
@@ -63,9 +66,11 @@ body {
         width: 900px;
         height: 700px;
         border-radius: 1rem;
-        border: dotted 5px var(--text-color);
+        border: dotted 5px snow;
         background: var(--bg-colorWrapper);
         box-sizing: border-box;
+
+
 
 
 
