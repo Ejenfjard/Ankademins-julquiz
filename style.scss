@@ -39,8 +39,8 @@ body {
         border: none;
         opacity: 0.7;
         background: var(--bg-buttonToggle);
-        top: 50px;
-        left: 50px;
+        top: 5%;
+        left: 5%;
         position: absolute;
         z-index: 1;
 
@@ -63,11 +63,10 @@ body {
 
     .wrapper {
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 900px;
-        height: 700px;
+        width: 70%;
+        height: 80%;
         border-radius: 1rem;
         border: dotted 5px snow;
         background: var(--bg-colorWrapper);
@@ -90,21 +89,25 @@ body {
             border-radius: 1rem;
 
             #startQuizBtn {
-                width: 15rem;
-                height: 8rem;
+                width: 30%;
+                height: 20%;
                 background: var(--buttonBg);
                 color: var(--text-color);
                 border: none;
                 border-radius: 1rem;
                 cursor: pointer;
-                font-size: 20px;
+                font-size: 1rem;
                 font-weight: 700;
+
+
             }
 
 
             h1 {
                 color: var(--text-color);
                 font-weight: 700;
+                text-align: center;
+                font-size: 2rem;
             }
 
         }
@@ -117,30 +120,42 @@ body {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 70%;
-            height: 75%;
+            border: solid 4px black;
+            width: 85%;
+            height: 85%;
             background: var(--bg-colorContainer);
             border: none;
             border-radius: 1rem;
             box-sizing: border-box;
-            gap: 10px;
+
 
             #options {
                 display: flex;
                 justify-content: center;
                 gap: 1rem;
+                margin-left: 5%;
+                margin-right: 5%;
 
 
                 .btnOption {
                     background: var(--buttonBg);
                     color: var(--text-color);
                     font-weight: 700;
+
+
+
+                }
+
+                .disabled {
+                    pointer-events: none;
+                    /* Hindra klickhändelser på inaktiva alternativ */
+                    opacity: 0.5;
                 }
 
             }
 
             #question {
-                margin: 4rem;
+                margin: 2rem;
                 color: var(--text-color);
                 font-size: 23px;
                 text-align: center;
@@ -150,9 +165,10 @@ body {
             #feedback {
                 display: flex;
                 justify-content: center;
-                margin-bottom: -5px;
+
                 font-size: 23px;
                 color: yellow;
+                font-weight: 700;
 
 
             }
@@ -181,7 +197,7 @@ body {
                     border: dotted #990000 4px;
                     color: #990000;
                     font-weight: 700;
-                    margin: 10px;
+                    margin: 5%;
 
                 }
 
@@ -190,7 +206,7 @@ body {
                     color: snow;
                     background: #990000;
                     font-weight: 700;
-                    margin: 10px;
+                    margin: 5%;
 
                 }
             }

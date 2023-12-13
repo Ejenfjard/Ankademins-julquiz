@@ -156,18 +156,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+    //Variabel som håller koll på om användaren svarat
+    let answered = false;
 
     function selectOption(selectedIndex) {
-        let correctAnswerIndex = questionArray[currentQuestion].correctAnswer;
 
 
-        if (selectedIndex === correctAnswerIndex) {
 
-            feedbackString.innerHTML = "Rätt svar!";
-            userScore++;
+        if (!answered) {
+            // sparar data för hur många rätt användaren får genom quizet.
+            let correctAnswerIndex = questionArray[currentQuestion].correctAnswer;
 
-        } else {
-            feedbackString.innerHTML = "Fel svar!";
+
+
+            if (selectedIndex === correctAnswerIndex) {
+
+                feedbackString.innerHTML = "Rätt svar!";
+                userScore++;
+
+            } else {
+                feedbackString.innerHTML = "Fel svar!";
+            }
+
+            let options = document.getElementsByClassName("btnOption");
+            //loopa genom svarsalternativ 
+            for (let i = 0; i < options.length; i++) {
+                // Lägg till en css-klass som träffar varje svarsalternativ 
+                options[i].classList.add("disabled");
+            }
+
+            answered = true;
         }
     }
 
@@ -175,15 +193,12 @@ document.addEventListener("DOMContentLoaded", function () {
         //logik för att gå vidare till nästa fråga 
         currentQuestion++;
 
+
         if (currentQuestion < questionArray.length) {
-
-            selectOption(); // Då användaren klickar på nästa fråga kollar datan om svaret är rätt och räknar poäng. 
-
-            showQuestion();  // Om alla frågor inte besvarats så körs funk. showquestion och användaren klickas vidare till nästa obesvarade fråga 
-            feedbackString.innerHTML = ""; //Föregående fråga feedback raderas. 
-        }
-
-        else {
+            answered = false;
+            showQuestion(); // Om alla frågor inte besvarats så körs funk. showquestion och användaren klickas vidare till nästa obesvarade fråga 
+            feedbackString.innerHTML = ""; //Föregående fråga feedback raderas.
+        } else {
             // Logik som tar bort knappen nästa fråga och lägger till knappen se resultat 
             submitBtn.style.display = "block";
             nextQuestionBtn.style.display = "none";
